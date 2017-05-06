@@ -1,0 +1,36 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:Party" "base:MnisThing" "base:ContactPoint" "base:MnisPerson" "base:OnsThing" "base:HouseIncumbency" "base:NamedThing" "base:Incumbency" "base:PastThing" "base:PartyMember" "base:MnisConstituencyGroup" "base:TemporalThing" "base:PastIncumbency" "base:Candidate" "base:DeceasedPerson" "base:OnsConstituencyGroup" "base:Member" "base:PimsThing" "base:ElectionType" "base:PimsPerson" "base:Gender" "base:Role" "base:Person" "base:DodsThing" "base:MnisContactPoint" "base:MnisHouseIncumbencyType" "base:ElectoralIncumbency" "base:MnisParty" "base:PastRole" "base:SeatIncumbency" "base:PastPartyMembership" "base:ConstituencyGroup" "base:MnisGender" "base:HouseIncumbencyType" "base:ExternalThing" "base:PastConstituencyGroup" "base:MnisElectionType" "base:PartyMembership" "base:DodsPerson" ; /*classes style*/
+	"base:HouseIncumbency" -> "base:Incumbency" [ label = "rdfs:subClassOf" ];
+	"base:MnisGender" -> "base:Gender" [ label = "rdfs:subClassOf" ];
+	"base:OnsConstituencyGroup" -> "base:OnsThing" [ label = "rdfs:subClassOf" ];
+	"base:OnsConstituencyGroup" -> "base:ConstituencyGroup" [ label = "rdfs:subClassOf" ];
+	"base:DodsThing" -> "base:ExternalThing" [ label = "rdfs:subClassOf" ];
+	"base:NamedThing" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"base:MnisElectionType" -> "base:ElectionType" [ label = "rdfs:subClassOf" ];
+	"base:ElectoralIncumbency" -> "base:SeatIncumbency" [ label = "rdfs:subClassOf" ];
+	"base:MnisContactPoint" -> "base:ContactPoint" [ label = "rdfs:subClassOf" ];
+	"base:MnisHouseIncumbencyType" -> "base:HouseIncumbencyType" [ label = "rdfs:subClassOf" ];
+	"base:MnisConstituencyGroup" -> "base:ConstituencyGroup" [ label = "rdfs:subClassOf" ];
+	"base:OnsThing" -> "base:ExternalThing" [ label = "rdfs:subClassOf" ];
+	"base:PimsThing" -> "base:ExternalThing" [ label = "rdfs:subClassOf" ];
+	"base:PastRole" -> "base:Role" [ label = "rdfs:subClassOf" ];
+	"base:PastIncumbency" -> "base:Incumbency" [ label = "rdfs:subClassOf" ];
+	"base:DodsPerson" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:TemporalThing" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"base:DeceasedPerson" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:MnisThing" -> "base:ExternalThing" [ label = "rdfs:subClassOf" ];
+	"base:ExternalThing" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
+	"base:PastThing" -> "base:TemporalThing" [ label = "rdfs:subClassOf" ];
+	"base:PastPartyMembership" -> "base:PartyMembership" [ label = "rdfs:subClassOf" ];
+	"base:MnisPerson" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:Candidate" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:MnisParty" -> "base:Party" [ label = "rdfs:subClassOf" ];
+	"base:PastConstituencyGroup" -> "base:ConstituencyGroup" [ label = "rdfs:subClassOf" ];
+	"base:Member" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:SeatIncumbency" -> "base:Incumbency" [ label = "rdfs:subClassOf" ];
+	"base:PartyMember" -> "base:Person" [ label = "rdfs:subClassOf" ];
+	"base:PimsPerson" -> "base:Person" [ label = "rdfs:subClassOf" ];
+
+}

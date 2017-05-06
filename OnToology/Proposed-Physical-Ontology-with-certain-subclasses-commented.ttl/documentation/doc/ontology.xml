@@ -1,0 +1,918 @@
+<rdf:RDF
+    xmlns:id="http://id.ukpds.org/"
+    xmlns:wikidata="https://www.wikidata.org/wiki/"
+    xmlns:schema="http://schema.org/"
+    xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:spin="http://spinrdf.org/spin#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:sp="http://spinrdf.org/sp#"
+    xmlns:wikipedia="https://en.wikipedia.org/wiki/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://id.ukpds.org/schema/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/HouseSeat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupName">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyResultHasElectoralIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ElectoralIncumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/electoralIncumbencyHasCandidacyResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/roleHasPerson">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/personHasRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/voteCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electorateHasConstitutencyGroup">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Electorate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ContactableThing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/incumbencyStartDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/startDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/positionName">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ConstituencyGroup">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/genderName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Gender"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/OnsThing">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ExternalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Incumbency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/faxNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/incumbencyEndDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PastIncumbency"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/endDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/roleHasPosition">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Position"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/positionHasRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personGivenName">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/startDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/TemporalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/HouseIncumbencyType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personFamilyName">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Electorate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionHasElectionType">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ElectionType"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyAreaHasConstituencyGroup">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyArea"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/pimsId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PimsThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/externalIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/genderMnisId">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisGender"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/externalIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ExternalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Candidate">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMembershipHasParty">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatHasHouse">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/House"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyResultHasCandidacy">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/candidacyHasCandidacyResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/genderIdentityHasGender">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Gender"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/GenderIdentity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactableThingHasContactPoint">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactableThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personDateOfDeath">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/DeceasedPerson"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/endDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/resultPosition">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseIncumbencyTypeName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseIncumbencyType"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ConstituencyArea"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PastConstituencyGroup">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electorateHasElection">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Electorate"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/electionHasElectorate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatTypeHasHouseSeat">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeatType"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/houseSeatHasHouseSeatType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionTypeMnisId">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisElectionType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/SeatIncumbency">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyHasParty">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionHasElectorate">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Electorate"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMnisId">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisParty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/addressLine2">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personHasContactPoint">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/contactableThingHasContactPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personOtherNames">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electoralIncumbencyHasCandidacyResult">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ElectoralIncumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/TemporalThing">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionHasCandidacy">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/candidacyHasElection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyName">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/latitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/GeographicalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personHasRole">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personMnisId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisPerson"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/House"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisConstituencyGroup">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/House">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseIncumbencyHasHouseIncumbencyType">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseIncumbencyType"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseIncumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatHasConstituencyGroup">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ExternalThing">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/addressLine1">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisPerson">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointMnisId">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/postCode">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupStartDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/startDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseIncumbencyTypeHasHouseIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseIncumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseIncumbencyType"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/houseIncumbencyHasHouseIncumbencyType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisThing">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ExternalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidateHasCandidacy">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Candidate"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/candidacyHasCandidate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Gender">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Election">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ConstituencyArea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PastIncumbency">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PastPartyMembership">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactForm">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/genderIdentityHasPerson">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/GenderIdentity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisHouseIncumbencyType">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/HouseIncumbencyType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/DodsThing">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ExternalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyAreaExtent">
+    <rdfs:seeAlso rdf:resource="http://schema.org/polygon"/>
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Party">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionTypeName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ElectionType"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisElectionType">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ElectionType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/roleEndDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/endDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PastRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseIncumbencyHasHouse">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/House"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseIncumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/addressLine4">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/mnisId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/externalIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/name">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/NamedThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMembershipStartDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/startDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointHasPostalAddress">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/incumbencyHasContactPoint">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/contactableThingHasContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointHasPerson">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/personHasContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PastThing">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/TemporalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatHasSeatIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/SeatIncumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisParty">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/dodsId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/DodsThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/externalIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointHasIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/incumbencyHasContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/onsCode">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/OnsThing"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/externalIdentifier"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/genderHasGenderIdentity">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/GenderIdentity"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Gender"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/genderIdentityHasGender"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/phoneNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/GenderIdentity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electoralIncumbencyHasContactPoint">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ElectoralIncumbency"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/contactableThingHasContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupMnisId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisConstituencyGroup"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PartyMembership">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/addressLine3">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisGender">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Gender"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ElectionType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyHasElection">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PartyMember">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personHasGenderIdentity">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/GenderIdentity"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/genderIdentityHasPerson"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupHasHouseSeat">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/houseSeatHasConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personDateOfBirth">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/startDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyAreaLongitude">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/longitude"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PimsPerson">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Member">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/DodsPerson">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyhasCandidacy">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/candidacyHasParty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyHasCandidate">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Candidate"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/OnsConstituencyGroup">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/OnsThing"/>
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <rdfs:seeAlso rdf:resource="http://data.ordnancesurvey.co.uk/ontology/admingeo/WestminsterConstituency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseHasHouseIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseIncumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/House"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/houseIncumbencyHasHouse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/SeatIncumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/roleStartDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/startDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/HouseSeatType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/postalAddressHasContactPoint">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/contactPointHasPostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyAreaLatitude">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/latitude"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyArea"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/candidacyHasCandidacyResult">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/CandidacyResult"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Candidacy"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseIncumbencyTypeMnisId">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/mnisId"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/MnisHouseIncumbencyType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/memberHasIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Member"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/incumbencyHasMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyHasPartyMembership">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Party"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/partyMembershipHasParty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatHasHouseSeatType">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseSeatType"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupEndDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/endDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PastConstituencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/HouseIncumbency">
+    <rdfs:comment>Exists to provide connection between a house member and their house where seat information is not available.  e.g. House of Lords as of 14th February 2017</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatTypeName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeatType"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personDodsId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/DodsPerson"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/dodsId"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMembershipHasPartyMember">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/PartyMember"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMembershipEndDate">
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/endDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PastPartyMembership"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/GeographicalThing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/personPimsId">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PimsPerson"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/pimsId"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupHasElectorate">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Electorate"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ConstituencyGroup"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/electorateHasConstitutencyGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PastRole">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointHasElectoralIncumbency">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ElectoralIncumbency"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/electoralIncumbencyHasContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/positionHasRole">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Role"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Position"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ContactPoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/contactPointHasContactableThing">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/ContactableThing"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/contactableThingHasContactPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/MnisContactPoint">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseHasHouseSeat">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/House"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/houseSeatHasHouse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/electionTypeHasElection">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Election"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ElectionType"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/electionHasElectionType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/endDate">
+    <rdfs:comment>By convention, endDate is only used after the date.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PastThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/NamedThing">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/ElectoralIncumbency">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/SeatIncumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/addressLine5">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PostalAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/email">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/ContactPoint"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Position">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/CandidacyResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/houseSeatName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/HouseSeat"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/incumbencyHasMember">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/Member"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/Incumbency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/PimsThing">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/ExternalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/Candidacy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/constituencyGroupOnsCode">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/OnsConstituencyGroup"/>
+    <rdfs:subPropertyOf rdf:resource="http://id.ukpds.org/schema/onsCode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/DeceasedPerson">
+    <rdfs:subClassOf rdf:resource="http://id.ukpds.org/schema/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/partyMemberHasPartyMembership">
+    <rdfs:range rdf:resource="http://id.ukpds.org/schema/PartyMembership"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/PartyMember"/>
+    <owl:inverseOf rdf:resource="http://id.ukpds.org/schema/partyMembershipHasPartyMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.ukpds.org/schema/longitude">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://id.ukpds.org/schema/GeographicalThing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>

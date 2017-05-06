@@ -1,0 +1,618 @@
+{
+  "@context" : {
+    "houseSeatHasConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatHasConstituencyGroup",
+      "@type" : "@id"
+    },
+    "ElectoralIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/ElectoralIncumbency"
+    },
+    "electionHasElectionType" : {
+      "@id" : "http://id.ukpds.org/schema/electionHasElectionType",
+      "@type" : "@id"
+    },
+    "houseHasHouseIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/houseHasHouseIncumbency",
+      "@type" : "@id"
+    },
+    "roleHasPosition" : {
+      "@id" : "http://id.ukpds.org/schema/roleHasPosition",
+      "@type" : "@id"
+    },
+    "addressLine5" : {
+      "@id" : "http://id.ukpds.org/schema/addressLine5",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "resultPosition" : {
+      "@id" : "http://id.ukpds.org/schema/resultPosition",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "MnisContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/MnisContactPoint"
+    },
+    "candidacyResultHasCandidacy" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyResultHasCandidacy",
+      "@type" : "@id"
+    },
+    "Candidate" : {
+      "@id" : "http://id.ukpds.org/schema/Candidate"
+    },
+    "houseIncumbencyTypeName" : {
+      "@id" : "http://id.ukpds.org/schema/houseIncumbencyTypeName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "houseSeatName" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contactableThingHasContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/contactableThingHasContactPoint",
+      "@type" : "@id"
+    },
+    "ElectionType" : {
+      "@id" : "http://id.ukpds.org/schema/ElectionType"
+    },
+    "partyMemberHasPartyMembership" : {
+      "@id" : "http://id.ukpds.org/schema/partyMemberHasPartyMembership",
+      "@type" : "@id"
+    },
+    "CandidacyResult" : {
+      "@id" : "http://id.ukpds.org/schema/CandidacyResult"
+    },
+    "startDate" : {
+      "@id" : "http://id.ukpds.org/schema/startDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "personGivenName" : {
+      "@id" : "http://id.ukpds.org/schema/personGivenName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "houseIncumbencyTypeMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/houseIncumbencyTypeMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "partyMembershipHasParty" : {
+      "@id" : "http://id.ukpds.org/schema/partyMembershipHasParty",
+      "@type" : "@id"
+    },
+    "partyMembershipStartDate" : {
+      "@id" : "http://id.ukpds.org/schema/partyMembershipStartDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "ExternalThing" : {
+      "@id" : "http://id.ukpds.org/schema/ExternalThing"
+    },
+    "mnisId" : {
+      "@id" : "http://id.ukpds.org/schema/mnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "HouseSeat" : {
+      "@id" : "http://id.ukpds.org/schema/HouseSeat"
+    },
+    "House" : {
+      "@id" : "http://id.ukpds.org/schema/House"
+    },
+    "contactPointHasElectoralIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointHasElectoralIncumbency",
+      "@type" : "@id"
+    },
+    "Election" : {
+      "@id" : "http://id.ukpds.org/schema/Election"
+    },
+    "GenderIdentity" : {
+      "@id" : "http://id.ukpds.org/schema/GenderIdentity"
+    },
+    "MnisElectionType" : {
+      "@id" : "http://id.ukpds.org/schema/MnisElectionType"
+    },
+    "DodsThing" : {
+      "@id" : "http://id.ukpds.org/schema/DodsThing"
+    },
+    "houseSeatTypeName" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatTypeName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "faxNumber" : {
+      "@id" : "http://id.ukpds.org/schema/faxNumber",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Member" : {
+      "@id" : "http://id.ukpds.org/schema/Member"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "PartyMembership" : {
+      "@id" : "http://id.ukpds.org/schema/PartyMembership"
+    },
+    "longitude" : {
+      "@id" : "http://id.ukpds.org/schema/longitude",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "roleEndDate" : {
+      "@id" : "http://id.ukpds.org/schema/roleEndDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "personMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/personMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "positionName" : {
+      "@id" : "http://id.ukpds.org/schema/positionName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "personDodsId" : {
+      "@id" : "http://id.ukpds.org/schema/personDodsId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "houseSeatHasHouseSeatType" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatHasHouseSeatType",
+      "@type" : "@id"
+    },
+    "personFamilyName" : {
+      "@id" : "http://id.ukpds.org/schema/personFamilyName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "PastConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/PastConstituencyGroup"
+    },
+    "partyHasPartyMembership" : {
+      "@id" : "http://id.ukpds.org/schema/partyHasPartyMembership",
+      "@type" : "@id"
+    },
+    "contactPointHasIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointHasIncumbency",
+      "@type" : "@id"
+    },
+    "candidacyHasCandidate" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyHasCandidate",
+      "@type" : "@id"
+    },
+    "partyhasCandidacy" : {
+      "@id" : "http://id.ukpds.org/schema/partyhasCandidacy",
+      "@type" : "@id"
+    },
+    "positionHasRole" : {
+      "@id" : "http://id.ukpds.org/schema/positionHasRole",
+      "@type" : "@id"
+    },
+    "constituencyGroupHasConstituencyArea" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupHasConstituencyArea",
+      "@type" : "@id"
+    },
+    "MnisConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/MnisConstituencyGroup"
+    },
+    "email" : {
+      "@id" : "http://id.ukpds.org/schema/email",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "PartyMember" : {
+      "@id" : "http://id.ukpds.org/schema/PartyMember"
+    },
+    "PimsPerson" : {
+      "@id" : "http://id.ukpds.org/schema/PimsPerson"
+    },
+    "Gender" : {
+      "@id" : "http://id.ukpds.org/schema/Gender"
+    },
+    "MnisGender" : {
+      "@id" : "http://id.ukpds.org/schema/MnisGender"
+    },
+    "Person" : {
+      "@id" : "http://id.ukpds.org/schema/Person"
+    },
+    "Candidacy" : {
+      "@id" : "http://id.ukpds.org/schema/Candidacy"
+    },
+    "houseSeatHasHouse" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatHasHouse",
+      "@type" : "@id"
+    },
+    "ContactableThing" : {
+      "@id" : "http://id.ukpds.org/schema/ContactableThing"
+    },
+    "latitude" : {
+      "@id" : "http://id.ukpds.org/schema/latitude",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "Electorate" : {
+      "@id" : "http://id.ukpds.org/schema/Electorate"
+    },
+    "PimsThing" : {
+      "@id" : "http://id.ukpds.org/schema/PimsThing"
+    },
+    "electionTypeHasElection" : {
+      "@id" : "http://id.ukpds.org/schema/electionTypeHasElection",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://id.ukpds.org/schema/name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "roleHasPerson" : {
+      "@id" : "http://id.ukpds.org/schema/roleHasPerson",
+      "@type" : "@id"
+    },
+    "Role" : {
+      "@id" : "http://id.ukpds.org/schema/Role"
+    },
+    "DeceasedPerson" : {
+      "@id" : "http://id.ukpds.org/schema/DeceasedPerson"
+    },
+    "ContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/ContactPoint"
+    },
+    "PastIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/PastIncumbency"
+    },
+    "SeatIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/SeatIncumbency"
+    },
+    "HouseSeatType" : {
+      "@id" : "http://id.ukpds.org/schema/HouseSeatType"
+    },
+    "constituencyAreaLongitude" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyAreaLongitude"
+    },
+    "memberHasIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/memberHasIncumbency",
+      "@type" : "@id"
+    },
+    "houseSeatTypeHasHouseSeat" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatTypeHasHouseSeat",
+      "@type" : "@id"
+    },
+    "constituencyAreaExtent" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyAreaExtent",
+      "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+    },
+    "onsCode" : {
+      "@id" : "http://id.ukpds.org/schema/onsCode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "addressLine4" : {
+      "@id" : "http://id.ukpds.org/schema/addressLine4",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contactPointHasPerson" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointHasPerson",
+      "@type" : "@id"
+    },
+    "MnisParty" : {
+      "@id" : "http://id.ukpds.org/schema/MnisParty"
+    },
+    "PastThing" : {
+      "@id" : "http://id.ukpds.org/schema/PastThing"
+    },
+    "houseHasHouseSeat" : {
+      "@id" : "http://id.ukpds.org/schema/houseHasHouseSeat",
+      "@type" : "@id"
+    },
+    "constituencyGroupName" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "electoralIncumbencyHasContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/electoralIncumbencyHasContactPoint",
+      "@type" : "@id"
+    },
+    "PostalAddress" : {
+      "@id" : "http://id.ukpds.org/schema/PostalAddress"
+    },
+    "Incumbency" : {
+      "@id" : "http://id.ukpds.org/schema/Incumbency"
+    },
+    "MnisPerson" : {
+      "@id" : "http://id.ukpds.org/schema/MnisPerson"
+    },
+    "genderIdentityHasPerson" : {
+      "@id" : "http://id.ukpds.org/schema/genderIdentityHasPerson",
+      "@type" : "@id"
+    },
+    "personDateOfDeath" : {
+      "@id" : "http://id.ukpds.org/schema/personDateOfDeath",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "candidacyResultHasElectoralIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyResultHasElectoralIncumbency",
+      "@type" : "@id"
+    },
+    "electionName" : {
+      "@id" : "http://id.ukpds.org/schema/electionName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contactPointHasPostalAddress" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointHasPostalAddress",
+      "@type" : "@id"
+    },
+    "externalIdentifier" : {
+      "@id" : "http://id.ukpds.org/schema/externalIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "constituencyGroupHasHouseSeat" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupHasHouseSeat",
+      "@type" : "@id"
+    },
+    "incumbencyStartDate" : {
+      "@id" : "http://id.ukpds.org/schema/incumbencyStartDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "PastPartyMembership" : {
+      "@id" : "http://id.ukpds.org/schema/PastPartyMembership"
+    },
+    "contactPointMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "phoneNumber" : {
+      "@id" : "http://id.ukpds.org/schema/phoneNumber",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "incumbencyHasContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/incumbencyHasContactPoint",
+      "@type" : "@id"
+    },
+    "Position" : {
+      "@id" : "http://id.ukpds.org/schema/Position"
+    },
+    "constituencyGroupEndDate" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupEndDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "constituencyGroupStartDate" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupStartDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "MnisThing" : {
+      "@id" : "http://id.ukpds.org/schema/MnisThing"
+    },
+    "candidacyHasCandidacyResult" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyHasCandidacyResult",
+      "@type" : "@id"
+    },
+    "HouseIncumbencyType" : {
+      "@id" : "http://id.ukpds.org/schema/HouseIncumbencyType"
+    },
+    "constituencyGroupMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "GeographicalThing" : {
+      "@id" : "http://id.ukpds.org/schema/GeographicalThing"
+    },
+    "electionTypeName" : {
+      "@id" : "http://id.ukpds.org/schema/electionTypeName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "voteCount" : {
+      "@id" : "http://id.ukpds.org/schema/voteCount",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "constituencyAreaLatitude" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyAreaLatitude"
+    },
+    "seatIncumbencyHasHouseSeat" : {
+      "@id" : "http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat",
+      "@type" : "@id"
+    },
+    "constituencyAreaHasConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyAreaHasConstituencyGroup",
+      "@type" : "@id"
+    },
+    "HouseIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/HouseIncumbency"
+    },
+    "electorateHasConstitutencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/electorateHasConstitutencyGroup",
+      "@type" : "@id"
+    },
+    "OnsThing" : {
+      "@id" : "http://id.ukpds.org/schema/OnsThing"
+    },
+    "electionHasElectorate" : {
+      "@id" : "http://id.ukpds.org/schema/electionHasElectorate",
+      "@type" : "@id"
+    },
+    "contactPointHasContactableThing" : {
+      "@id" : "http://id.ukpds.org/schema/contactPointHasContactableThing",
+      "@type" : "@id"
+    },
+    "addressLine1" : {
+      "@id" : "http://id.ukpds.org/schema/addressLine1",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "electionTypeMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/electionTypeMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dodsId" : {
+      "@id" : "http://id.ukpds.org/schema/dodsId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "roleStartDate" : {
+      "@id" : "http://id.ukpds.org/schema/roleStartDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "TemporalThing" : {
+      "@id" : "http://id.ukpds.org/schema/TemporalThing"
+    },
+    "addressLine3" : {
+      "@id" : "http://id.ukpds.org/schema/addressLine3",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "addressLine2" : {
+      "@id" : "http://id.ukpds.org/schema/addressLine2",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "pimsId" : {
+      "@id" : "http://id.ukpds.org/schema/pimsId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "genderName" : {
+      "@id" : "http://id.ukpds.org/schema/genderName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "NamedThing" : {
+      "@id" : "http://id.ukpds.org/schema/NamedThing"
+    },
+    "PastRole" : {
+      "@id" : "http://id.ukpds.org/schema/PastRole"
+    },
+    "MnisHouseIncumbencyType" : {
+      "@id" : "http://id.ukpds.org/schema/MnisHouseIncumbencyType"
+    },
+    "postCode" : {
+      "@id" : "http://id.ukpds.org/schema/postCode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/ConstituencyGroup"
+    },
+    "partyMembershipEndDate" : {
+      "@id" : "http://id.ukpds.org/schema/partyMembershipEndDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "postalAddressHasContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/postalAddressHasContactPoint",
+      "@type" : "@id"
+    },
+    "incumbencyHasMember" : {
+      "@id" : "http://id.ukpds.org/schema/incumbencyHasMember",
+      "@type" : "@id"
+    },
+    "ConstituencyArea" : {
+      "@id" : "http://id.ukpds.org/schema/ConstituencyArea"
+    },
+    "genderMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/genderMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "houseIncumbencyHasHouse" : {
+      "@id" : "http://id.ukpds.org/schema/houseIncumbencyHasHouse",
+      "@type" : "@id"
+    },
+    "Party" : {
+      "@id" : "http://id.ukpds.org/schema/Party"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "personPimsId" : {
+      "@id" : "http://id.ukpds.org/schema/personPimsId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "electoralIncumbencyHasCandidacyResult" : {
+      "@id" : "http://id.ukpds.org/schema/electoralIncumbencyHasCandidacyResult",
+      "@type" : "@id"
+    },
+    "candidacyHasElection" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyHasElection",
+      "@type" : "@id"
+    },
+    "candidacyHasParty" : {
+      "@id" : "http://id.ukpds.org/schema/candidacyHasParty",
+      "@type" : "@id"
+    },
+    "personHasContactPoint" : {
+      "@id" : "http://id.ukpds.org/schema/personHasContactPoint",
+      "@type" : "@id"
+    },
+    "houseSeatHasSeatIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/houseSeatHasSeatIncumbency",
+      "@type" : "@id"
+    },
+    "houseIncumbencyTypeHasHouseIncumbency" : {
+      "@id" : "http://id.ukpds.org/schema/houseIncumbencyTypeHasHouseIncumbency",
+      "@type" : "@id"
+    },
+    "personHasGenderIdentity" : {
+      "@id" : "http://id.ukpds.org/schema/personHasGenderIdentity",
+      "@type" : "@id"
+    },
+    "constituencyGroupOnsCode" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupOnsCode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "electionHasCandidacy" : {
+      "@id" : "http://id.ukpds.org/schema/electionHasCandidacy",
+      "@type" : "@id"
+    },
+    "incumbencyEndDate" : {
+      "@id" : "http://id.ukpds.org/schema/incumbencyEndDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "OnsConstituencyGroup" : {
+      "@id" : "http://id.ukpds.org/schema/OnsConstituencyGroup"
+    },
+    "genderHasGenderIdentity" : {
+      "@id" : "http://id.ukpds.org/schema/genderHasGenderIdentity",
+      "@type" : "@id"
+    },
+    "endDate" : {
+      "@id" : "http://id.ukpds.org/schema/endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "partyMembershipHasPartyMember" : {
+      "@id" : "http://id.ukpds.org/schema/partyMembershipHasPartyMember",
+      "@type" : "@id"
+    },
+    "houseIncumbencyHasHouseIncumbencyType" : {
+      "@id" : "http://id.ukpds.org/schema/houseIncumbencyHasHouseIncumbencyType",
+      "@type" : "@id"
+    },
+    "partyName" : {
+      "@id" : "http://id.ukpds.org/schema/partyName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "candidateHasCandidacy" : {
+      "@id" : "http://id.ukpds.org/schema/candidateHasCandidacy",
+      "@type" : "@id"
+    },
+    "personOtherNames" : {
+      "@id" : "http://id.ukpds.org/schema/personOtherNames",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "personDateOfBirth" : {
+      "@id" : "http://id.ukpds.org/schema/personDateOfBirth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "partyMnisId" : {
+      "@id" : "http://id.ukpds.org/schema/partyMnisId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "houseName" : {
+      "@id" : "http://id.ukpds.org/schema/houseName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contactForm" : {
+      "@id" : "http://id.ukpds.org/schema/contactForm",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "DodsPerson" : {
+      "@id" : "http://id.ukpds.org/schema/DodsPerson"
+    },
+    "genderIdentityHasGender" : {
+      "@id" : "http://id.ukpds.org/schema/genderIdentityHasGender",
+      "@type" : "@id"
+    },
+    "electorateHasElection" : {
+      "@id" : "http://id.ukpds.org/schema/electorateHasElection",
+      "@type" : "@id"
+    },
+    "constituencyGroupHasElectorate" : {
+      "@id" : "http://id.ukpds.org/schema/constituencyGroupHasElectorate",
+      "@type" : "@id"
+    },
+    "personHasRole" : {
+      "@id" : "http://id.ukpds.org/schema/personHasRole",
+      "@type" : "@id"
+    }
+  }
+}
